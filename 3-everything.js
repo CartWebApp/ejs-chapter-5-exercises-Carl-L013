@@ -1,5 +1,14 @@
 function every(array, test) {
-    // Your code here.
+    for (i = 0; i < array.length; i++) {
+      if (test(array[i]) === false){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function everyBagel(array, test) {
+    return !array.some(test);
   }
   
   console.log(every([1, 3, 5], n => n < 10));
@@ -8,3 +17,4 @@ function every(array, test) {
   // → false
   console.log(every([], n => n < 10));
   // → true
+  console.log(everyBagel([2, 4, 16], n => n < 10));
